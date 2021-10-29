@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+.style1 {font-size: 36px}
+-->
+</style>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="" onsubmit="return validate()">
+  <label><span class="style1">SMT Registration form for Booking</span>:<br />
+  <p id="Enter"> </p> <br />
+  Name:
+    <input type="text" name="Answer1" id="Answer1" />
+    </label>
+    </p>
+  </p> 
+  <p>Gender: 
+    <label>
+    <input type="radio" name="RadioGroup1" value="radio" id="RadioGroup1_0" />
+Male</label>
+    <label>
+    <input type="radio" name="RadioGroup1" value="radio" id="RadioGroup1_1" />
+Female</label>
+</p>
+  <p>Contact: 
+    <label>
+    <input type="text" name="Answer2" id="Answer2" />
+    </label>
+  </p>
+  <p>
+    <label>Program:
+    <input type="text" name="Answer3" id="Answer3" />
+    </label>
+  </p>
+  <p>Days: 
+    <label>
+    <input type="text" name="Answer4" id="Answer4" />
+    </label>
+  </p>
+  <p>
+    <label>
+    <input type="submit" name="button" id="button" value="Validate form" onclick="validate()" />
+    </label>
+    <p id="Response"> </p>
+    <br />
+    <label></label>
+    <br />
+  </p>
+</form>
+
+<script>
+function validate(){
+
+if(document.getElementById("Answer1").value.length==0){
+alert("Enter your name");
+}
+
+if(document.getElementById("RadioGroup1_0").checked || document.getElementById("RadioGroup1_1").checked){
+pass;
+}
+
+else{
+alert("select a gender");
+}
+
+var i = document.getElementById("Answer2").value;
+if(i.length==0){
+alert("Enter a contact number");
+}
+if(isNaN(i)){
+alert("Enter a valid number");
+}
+
+const p = ["rock climbing","mountaineering","skiing","riding","high points","hiking","ice climbing"];
+var j = document.getElementById("Answer3").value;
+if(p.includes(j)){
+pass;
+}
+else{
+alert("The programs can only be from: "+p)
+}
+
+const d = ["2","3","4"];
+var k = document.getElementById("Answer4").value;
+if(d.includes(k)){
+pass;
+}
+else{
+alert("The days can only be from: "+d);
+}
+
+}
+</script>
+
+</body>
+</html>
